@@ -1,0 +1,19 @@
+.car{
+    z-index: 0;
+}
+
+.image{
+    margin-left: 25%;
+}
+
+.carouselHeading{
+    font-size: 40px;
+    color: white;
+    background-color:rgb(23, 23, 23);
+}
+
+@media (max-width: 768px) {
+    .image{
+        margin-left:auto;
+    }
+  }

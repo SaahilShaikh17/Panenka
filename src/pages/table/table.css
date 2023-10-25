@@ -1,0 +1,16 @@
+.tablePage{
+    background-color: rgb(23, 23, 23);
+}
+
+.tableTitle{
+  margin-top: 50px;
+  text-align: center;
+  font-size: 40px;
+  background-color: black;
+  color: rgb(255, 255, 255);
+}
+
+.Load{
+  text-align: center;
+  background-color: white;
+}

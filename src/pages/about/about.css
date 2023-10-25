@@ -1,0 +1,27 @@
+.aboutPage{
+    background-color: rgb(23, 23, 23);
+    padding: 20px;
+}
+  
+.aboutTitle {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 40px;
+    background-color: black;
+    color: rgb(255, 255, 255);
+}
+.futureScope,
+.members,
+.firstPara{
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    text-align: justify;
+    font-size: 20px;
+    color: white;
+}
+
+.aboutHeading{
+    color: #E73725;
+}

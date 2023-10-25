@@ -1,0 +1,127 @@
+/* .newsPage{
+  text-align: center;
+  background-color: rgb(23, 23, 23);
+}
+
+.newsTitle {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 40px;
+  color: aliceblue;
+  }
+
+  .gridTry {
+    border-radius: 20px;
+    margin-top: 30px;
+    width: 100%;
+    height: auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    background-color: rgb(23, 23, 23);
+  }
+  
+  .newsBox {
+    border-radius: 15 px;
+    width: 475px;
+    height: 500px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    background-color: rgb(70, 70, 70);
+  }
+  
+  .newsBox img {
+    width: 475px;
+  }
+  
+  .newsBox .description {
+    text-align: center;
+    color: white;
+  }
+  
+  .newsBox:hover {
+    transition: 0.3s ease-in;
+    cursor: pointer;
+    color: white;
+  } */
+
+  .newsPage {
+    text-align: center;
+    background-color: rgb(23, 23, 23);
+    padding: 20px; /* Add some padding for better spacing */
+  }
+  
+  .newsTitle {
+    background-color: black;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 40px;
+    color: aliceblue;
+  }
+  
+  .gridTry {
+    border-radius: 20px;
+    margin-top: 30px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr; /* Initially, stack items in a single column */
+    gap: 20px; /* Add some gap between grid items */
+    justify-items: center; /* Center items horizontally */
+    background-color: rgb(23, 23, 23);
+  }
+  
+  .newsBox {
+    border-radius: 15px;
+    max-width: 475px; /* Limit maximum width for responsiveness */
+    width: 100%; /* Allow the image to take the full width of the container */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(70, 70, 70);
+  }
+  
+  .newsBox img {
+    max-width: 100%; /* Ensure the image fits within its container */
+    height: auto;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  .heading{
+    color: rgb(0, 0, 0);
+    font:bolder;
+    background-color: rgb(70, 70, 70);
+    font-size: 25px;
+  }
+
+  .newsBox .description {
+    text-align: center;
+    color: rgb(255, 255, 255);
+  }
+  
+  .newsBox:hover {
+    transition: 0.3s ease-in;
+    cursor: pointer;
+    color: white;
+  }
+  
+  /* Media query for smaller screens */
+  @media (min-width: 768px) {
+    .gridTry {
+      grid-template-columns: 1fr 1fr; /* Display two items in a row on larger screens */
+    }
+  }
+
+  /* Media query for larger screens */
+@media (min-width: 1024px) {
+  .gridTry {
+    grid-template-columns: repeat(3, 1fr); /* Display three items in a row on larger screens */
+  }
+}
+
+  

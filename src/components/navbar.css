@@ -1,0 +1,195 @@
+/* 
+
+ *{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    }
+.navbar {
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 80px;
+    background-color: #E73725;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+  }
+
+  .home{
+    margin-right:375px;
+    display: flex;
+    align-items: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+    color: black;
+  }
+
+  .home a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin-left: 40px;
+    font-size: 40px;
+    opacity: 1;
+  }
+  .links {
+    margin-right: 300px;
+    display: flex;
+    align-items: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+  }
+  
+  .links a {
+    text-decoration: none;
+    color: white;
+    margin-left: 40px;
+    font-size: 22px;
+    opacity: 1;
+  }
+
+  .links a:hover{
+  border: none;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  transition: 0.3s;
+  }
+
+  .login {
+    margin-left: 30px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+  }
+  
+  .login a {
+    text-decoration: none;
+    color: white;
+    margin-left: 40px;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+  }
+
+  .login a:hover{
+  border: none;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  transition: 0.3s;
+  }
+  */
+
+  .container-fluid {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #E73725;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-brand {
+    margin-left: 20px;
+    font-weight: bolder;
+    color: black;
+    font-size: 30px;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-center {
+    
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-toggler {
+    margin-right: 20px;
+  }
+  
+  .nav-item {
+    margin-right: 50px;
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    opacity: 1;
+  }
+  
+  .nav-item a:hover {
+    color: rgb(0, 0, 0);
+    transition: 0.3s;
+  }
+  
+  .nav-login {
+    margin-right: 20px;
+  }
+  
+  .nav-login a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    opacity: 1;
+  }
+  
+  .nav-login a:hover {
+    color: rgb(0, 0, 0);
+    transition: 0.3s;
+  }
+  
+  .dropdown-menu {
+    padding-top: -15px;
+    margin-top: -15x;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Add a media query to target mobile devices */
+@media (max-width: 767px) {
+  /* Change the background color of the mobile menu when it's open */
+  .navbar-collapse.show {
+    background-color:  #E73725; /* Change to your desired background color */
+    padding-left: 20px;
+  }
+
+}
+
+/* Add this CSS to create a 2x10 grid layout for the dropdown menu */
+.grid-menu {
+  width: auto; /* Make sure the dropdown menu adjusts its width based on content */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns in the grid */
+  grid-gap: 10px; /* Adjust the gap between items as needed */
+  max-width: 400px; /* Adjust the maximum width of the grid container */
+}
+
+.grid-container li {
+  padding: 0; /* Remove padding from list items */
+  list-style: none; /* Remove the list bullet points */
+}
+
+.grid-container a {
+  text-decoration: none; /* Remove underlines from links */
+  color: #000000; /* Adjust the link color */
+  display: block;
+  padding: 5px 0; /* Add padding to each grid item as needed */
+}
+
+.grid-container a:hover{
+  color: red;
+}
+
