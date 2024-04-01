@@ -2,32 +2,38 @@ import React from 'react'
 import './fixturehome.css'
 import { useEffect, useState } from 'react'
 import Axios from 'axios';
+import { useMemo } from 'react';
 export const FixtureHome = () => {
 
   const [fixturesData, setFixturesData] = useState(null);
 
-  
-  
-  useEffect(() => {
+  const fetchdata = useMemo(() => async () => {
+    
 
-    const apiUrl = 'https://v3.football.api-sports.io/fixtures?season=2023&league=39&next=4';
-  
-    const axiosConfig = {
-      headers: {
-        'x-rapidapi-host': 'v3.football.api-sports.io',
-        'x-rapidapi-key': '5f36c45abe561f32839aeeae30b183e6', 
-      },
-    };
-    // Fetch fixtures and update state
-    Axios.get(apiUrl,axiosConfig)
-      .then((response) => {
-        console.log(JSON.stringify(response.data));
-        setFixturesData(response.data);
-      })
-      .catch((error) => {
-        console.error('Error fetching fixtures data:', error);
-      });
-  }, []);
+      const apiUrl = 'https://v3.football.api-sports.io/fixtures?season=2023&league=39&next=4';
+    
+      const axiosConfig = {
+        headers: {
+          'x-rapidapi-host': 'v3.football.api-sports.io',
+          'x-rapidapi-key': 'c47b12e1a80f487a594dc2e2e561482f', 
+        },
+      };
+      // Fetch fixtures and update state
+      Axios.get(apiUrl,axiosConfig)
+        .then((response) => {
+          console.log(JSON.stringify(response.data));
+          setFixturesData(response.data);
+        })
+        .catch((error) => {
+          console.error('Error fetching fixtures data:', error);
+        });
+    
+  },[]);
+
+  useEffect(()=>{
+    fetchdata()
+  },[fetchdata]);
+
   
   return (
     <div className='fixturePage'>
