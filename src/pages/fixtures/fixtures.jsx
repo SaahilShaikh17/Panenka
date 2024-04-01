@@ -1,6 +1,6 @@
 import React from 'react'
 import './fixtures.css'
-import { useEffect, useState } from 'react'
+import { useEffect, useState , useMemo} from 'react'
 import Axios from 'axios';
 export const Fixtures = () => {
 
@@ -8,14 +8,15 @@ export const Fixtures = () => {
 
   
   
-  useEffect(() => {
+  const fetchdata = useMemo(() => async () => {
+    
 
     const apiUrl = 'https://v3.football.api-sports.io/fixtures?season=2023&league=39';
   
     const axiosConfig = {
       headers: {
         'x-rapidapi-host': 'v3.football.api-sports.io',
-        'x-rapidapi-key': '5f36c45abe561f32839aeeae30b183e6', 
+        'x-rapidapi-key': 'c47b12e1a80f487a594dc2e2e561482f', 
       },
     };
     // Fetch fixtures and update state
@@ -27,7 +28,12 @@ export const Fixtures = () => {
       .catch((error) => {
         console.error('Error fetching fixtures data:', error);
       });
-  }, []);
+  
+},[]);
+
+useEffect(()=>{
+  fetchdata()
+},[fetchdata]);
   
   return (
     <div className='fixturePage'>

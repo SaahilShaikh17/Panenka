@@ -3,7 +3,7 @@ import './home.css'
 import { UncontrolledExample } from '../../components/uncontrolledexample';
 import { FantasyTemplate } from '../home/fantasyTemplate';
 import { FANTASYCONTENT } from '../../fantasyContent';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import axios from 'axios';
 import { FixtureHome } from '../../components/fixtureHome';
 export const Home = () => {
@@ -11,28 +11,32 @@ export const Home = () => {
   const [standingsData, setStandingsData] = useState(null);
 
 
-  useEffect(() => {
-    // API URL
-    const apiUrl = 'https://v3.football.api-sports.io/standings?league=39&season=2023';
+  const fetchdata = useMemo(() => async () => {
+    
 
-    // Axios configuration
+    const apiUrl = 'https://v3.football.api-sports.io/standings?league=39&season=2023';
+  
     const axiosConfig = {
       headers: {
         'x-rapidapi-host': 'v3.football.api-sports.io',
-        'x-rapidapi-key': '5f36c45abe561f32839aeeae30b183e6', // Replace with your actual API key
+        'x-rapidapi-key': 'c47b12e1a80f487a594dc2e2e561482f', 
       },
     };
-
-    // Make the GET request using Axios
-    axios.get(apiUrl, axiosConfig)
+    // Fetch fixtures and update state
+    axios.get(apiUrl,axiosConfig)
       .then((response) => {
-        // Data successfully fetched, storing it in the component's state
+        console.log(JSON.stringify(response.data));
         setStandingsData(response.data);
       })
       .catch((error) => {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching fixtures data:', error);
       });
-  }, []); // The empty dependency array ensures the effect runs only once
+  
+},[]);
+
+useEffect(()=>{
+  fetchdata()
+},[fetchdata]);
 
   return (
     <div className='homePage'>
