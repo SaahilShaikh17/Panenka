@@ -1,3 +1,4 @@
+//FantasyTemplate.jsx
 import React from 'react'
 
 export const FantasyTemplate = (props) => {

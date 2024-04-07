@@ -1,3 +1,4 @@
+//Newstemplate.jsx
 import React from 'react'
 export const NewsTemplate = (props) => {
     const { heading, desc, image, link } = props.data;

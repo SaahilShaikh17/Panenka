@@ -1,12 +1,11 @@
+//fixtures.jsx
 import React from 'react'
 import './fixtures.css'
 import { useEffect, useState , useMemo} from 'react'
 import Axios from 'axios';
+
 export const Fixtures = () => {
-
   const [fixturesData, setFixturesData] = useState(null);
-
-  
   
   const fetchdata = useMemo(() => async () => {
     

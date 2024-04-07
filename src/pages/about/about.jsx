@@ -1,3 +1,4 @@
+//about.jsx
 import React from 'react'
 import './about.css'
 export const About = () => {
@@ -10,7 +11,7 @@ export const About = () => {
         <h1 className='aboutHeading'>Our Team</h1>
         <p>Saahil Shaikh</p>
         <p>Sachit Desai</p>
-        <p>Sarothi Adhikary</p>
+        <p>Sanjana Sharma</p>
         <p>Sehaj Saluja</p>
         <br />
       </div>

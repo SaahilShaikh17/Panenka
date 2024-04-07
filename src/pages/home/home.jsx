@@ -1,3 +1,4 @@
+//home.jsx
 import React from 'react'
 import './home.css'
 import { UncontrolledExample } from '../../components/uncontrolledexample';
@@ -6,6 +7,8 @@ import { FANTASYCONTENT } from '../../fantasyContent';
 import { useEffect, useState, useMemo } from 'react';
 import axios from 'axios';
 import { FixtureHome } from '../../components/fixtureHome';
+
+
 export const Home = () => {
 
   const [standingsData, setStandingsData] = useState(null);
@@ -41,7 +44,6 @@ useEffect(()=>{
   return (
     <div className='homePage'>
       <div className="homeTitle">
-        <marquee><h1>Welcome to Paneka</h1></marquee>
       </div>
       <div className='carousel'>
       <UncontrolledExample />

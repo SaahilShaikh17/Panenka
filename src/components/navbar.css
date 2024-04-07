@@ -79,7 +79,7 @@
   */
 
   .container-fluid {
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     top: 0;
     width: 100%;
@@ -93,7 +93,7 @@
   .navbar-brand {
     margin-left: 20px;
     font-weight: bolder;
-    color: black;
+    color: #010000;
     font-size: 30px;
   }
   
@@ -124,7 +124,7 @@
   }
   
   .nav-item a:hover {
-    color: rgb(0, 0, 0);
+    color: #010000;
     transition: 0.3s;
   }
   
@@ -140,16 +140,18 @@
   }
   
   .nav-login a:hover {
-    color: rgb(0, 0, 0);
+    color: #010000;
     transition: 0.3s;
   }
   
   .dropdown-menu {
-    padding-top: -15px;
-    margin-top: -15x;
+    padding-top: 15px; /* Change to a positive value */
+    padding-bottom: 15px; /* Add padding to the bottom if needed */
     padding-left: 20px;
     padding-right: 20px;
+    margin-top: 0; /* Remove negative margin-top */
   }
+  
   
 .nav-item.dropdown:hover .dropdown-menu {
   display: block;
@@ -184,7 +186,7 @@
 
 .grid-container a {
   text-decoration: none; /* Remove underlines from links */
-  color: #000000; /* Adjust the link color */
+  color: #010000; /* Adjust the link color */
   display: block;
   padding: 5px 0; /* Add padding to each grid item as needed */
 }

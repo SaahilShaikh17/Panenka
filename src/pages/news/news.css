@@ -55,7 +55,7 @@
   }
   
   .newsTitle {
-    background-color: black;
+    /* background-color: black; */
     margin-top: 50px;
     text-align: center;
     font-size: 40px;
@@ -93,7 +93,7 @@
   }
   
   .heading{
-    color: rgb(0, 0, 0);
+    color: #FFFFFF;
     font:bolder;
     background-color: rgb(70, 70, 70);
     font-size: 25px;

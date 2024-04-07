@@ -1,6 +1,8 @@
+//table.jsx
 import React, { useEffect, useState ,useMemo} from 'react';
 import axios from 'axios';
 import './table.css'
+
 
 export const Table =()=> {
   const [standingsData, setStandingsData] = useState(null);
@@ -84,7 +86,13 @@ useEffect(()=>{
         </table>
         </div>
       ): (
-        <h1 className='Load'>Loading data...</h1>
+        <div className="d-flex justify-content-center">
+        <div className="spinner-border text-danger" role="status">
+        {/* <strong role="status">Loading...</strong>  */}
+        </div>
+      </div>
+
+
       )}
     </div>
   );
