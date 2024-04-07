@@ -1,11 +1,11 @@
 /* home.css */
 .homePage {
-  background-color: rgb(23, 23, 23);
+  background-color: rgb(23,23,23);
   padding: 20px;
 }
 
 .carousel{
-  z-index: 0;
+  z-index: 1;
 }
 
 .homeTitle,
@@ -13,13 +13,13 @@
   margin-top: 50px;
   text-align: center;
   font-size: 40px;
-  background-color: black;
-  color: rgb(255, 255, 255);
+  background-color: rgb(23,23,23);
+  color: #FFFFFF;
 }
 
 .flex-container {
   width: 100%;
-  margin-top: 30px;
+  margin-top: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -29,7 +29,7 @@
 hr.thick-line {
   border: none;
   height: 10px; /* Adjust the height as needed */
-  background-color: #ff1900;
+  background-color: #e73725;
 }
 
 .homefixtures{
@@ -42,7 +42,7 @@ hr.thick-line {
   padding: 20px;
   color: white;
   flex: 1;
-  background-color: #f43d28;
+  background-color: #e73725;
   border-radius: 20px;
   margin-bottom: 20px;
 }
@@ -61,7 +61,7 @@ hr.thick-line {
   .flex-container {
     flex-direction: column;
     align-items: center;
-    margin-top: 10px; /* Adjust margin for smaller screens */
+    margin-top: 2px; /* Adjust margin for smaller screens */
   }
 
   hr.thick-line {

@@ -1,19 +1,68 @@
-.car{
-    z-index: 0;
-}
-
-.image{
-    margin-left: 25%;
-}
-
-.carouselHeading{
-    font-size: 40px;
-    color: white;
-    background-color:rgb(23, 23, 23);
-}
-
-@media (max-width: 768px) {
-    .image{
-        margin-left:auto;
+/* uncontrolledexample.css */
+.car {
+    z-index: 1;
+    margin: auto;
+    max-width: 850px; /* Adjust maximum width as needed */
+  }
+  
+  .image-wrapper {
+    position: relative;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Add border-radius for rounded corners */
+  }
+  
+  .carouselHeading {
+    font-size: 24px;
+    color: #010000;
+    background-color: rgba(225, 225, 225, 0.7); /* Add translucent background color */
+    padding: 10px; /* Add padding for better readability */
+    text-align: center;
+    margin-top: 0; /* Remove default margin */
+    border-top-left-radius: 10px; /* Adjust border-radius for top corners */
+    border-top-right-radius: 10px;
+  }
+  
+  .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Add translucent background color for caption */
+    color: #FFFFFF;
+    text-align: center;
+  }
+  
+  .carousel-indicators {
+    bottom: -30px; /* Adjust position of indicators */
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Add translucent background color for control icons */
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: auto; /* Adjust width of control icons */
+    padding: 10px; /* Add padding for better usability */
+  }
+  
+  @media (max-width: 768px) {
+    .car {
+      max-width: 90%; /* Adjust maximum width for smaller screens */
+    }
+  
+    .carouselHeading {
+      font-size: 20px; /* Adjust font size for smaller screens */
+    }
+  
+    .caption {
+      font-size: 14px; /* Adjust font size for smaller screens */
     }
   }
+  
