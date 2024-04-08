@@ -14,7 +14,7 @@ export const News = () => {
   return (
     <div className="newsPage">
       <div className="newsTitle">
-        <h1>News</h1>
+        <h1>New</h1>
       </div>
       <div className="gridTry">
         {NEWSCONTENT.map((newsTemplate) => (
