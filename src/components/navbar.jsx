@@ -21,7 +21,7 @@ export const Navbar = () => {
             <a className="nav-link" href="/table">Table</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="http://localhost:3000/Dashboard">Forum</a>
+            <a className="nav-link" href="/Dashboard">Forum</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="/news">News</a>
