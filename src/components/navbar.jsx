@@ -1,10 +1,14 @@
 //navbar.jsx
 import "./navbar.css"
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import LoginImg from '../assets/login2.svg';
 
 export const Navbar = () => {
+
+  const isLoggedIn = localStorage.getItem('accessToken'); // Check if user is logged in
+
+
   return (
   <nav className="navbar navbar-expand-lg bg-body-tertiary">
     <div className="container-fluid">
@@ -21,8 +25,12 @@ export const Navbar = () => {
             <a className="nav-link" href="/table">Table</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/Dashboard">Forum</a>
-          </li>
+        {isLoggedIn ? (
+          <Link to="/dashboard" className="nav-link">Forum</Link>
+        ) : (
+          <Link to="/login" className="nav-link">Forum</Link>
+        )}
+      </li>
           <li className="nav-item">
             <a className="nav-link" href="/news">News</a>
           </li>

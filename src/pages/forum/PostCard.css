@@ -1,0 +1,25 @@
+.post-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-card{
+  background-color: #292929;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.post-card:hover{
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.post-card h3 {
+  margin-top: 0;
+}
+
+.post-card p {
+  margin: 5px 0;
+}

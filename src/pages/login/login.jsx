@@ -3,6 +3,7 @@ import axios from 'axios';
 import './login.css'
 import {  Route, Routes } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import  Home from '../../components/Home';
 import  Login  from '../../components/Login';
@@ -38,6 +39,9 @@ export const LoginScreen = () => {
       const response = await axios.post('http://localhost:1337/login', { user, pwd });
       console.log(response.data);
       // Handle successful login, e.g., redirect to dashboard
+      const accessToken = response.data.accessToken;
+      localStorage.setItem('accessToken', accessToken); // Store the access token in local storage
+      window.location.href = '/dashboard'; // Redirect to the dashboard after successful login
     } catch (error) {
       console.error('Login failed:', error.response.data.message);
       setError('Invalid username or password');
