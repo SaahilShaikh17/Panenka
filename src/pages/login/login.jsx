@@ -2,6 +2,7 @@ import React,  { useState } from 'react'
 import axios from 'axios';
 import './login.css'
 import {  Route, Routes } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 import  Home from '../../components/Home';
 import  Login  from '../../components/Login';
@@ -37,29 +38,31 @@ export const LoginScreen = () => {
   };
   return (
     <div className='loginPage'>
-        <h2>Login</h2>
-      {error && <p>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            value={user}
-            onChange={handleUsernameChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={pwd}
-            onChange={handlePasswordChange}
-          />
-        </div>
-        <button type="submit">Login</button>
-      </form>
+  <h2 className='loginHeader'>Login</h2>
+  {error && <p>{error}</p>}
+  <form onSubmit={handleSubmit}>
+    <div>
+      <label htmlFor="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        value={user}
+        onChange={handleUsernameChange}
+      />
     </div>
+    <div>
+      <label htmlFor="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        value={pwd}
+        onChange={handlePasswordChange}
+      />
+    </div>
+    <button type="submit">Login</button>
+  </form>
+  <p>Don't have an account? <Link to="/register">Register</Link></p> {/* Link to the register page */}
+</div>
+
   )
 }

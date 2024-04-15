@@ -38,49 +38,50 @@ function RegisterForm() {
   };
 
   return (
+    <div className='loginPage'>
+  <h2 className='loginHeader'>Register</h2>
+  {error && <p>{error}</p>}
+  <form onSubmit={handleSubmit}>
     <div>
-      <h2>Register</h2>
-      {error && <p>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="firstName">First Name:</label>
-          <input
-            type="text"
-            id="firstName"
-            value={fname}
-            onChange={handleFirstNameChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="lastName">Last Name:</label>
-          <input
-            type="text"
-            id="lastName"
-            value={lname}
-            onChange={handleLastNameChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            value={user}
-            onChange={handleUsernameChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={pwd}
-            onChange={handlePasswordChange}
-          />
-        </div>
-        <button type="submit">Register</button>
-      </form>
+      <label htmlFor="firstName">First Name:</label>
+      <input
+        type="text"
+        id="firstName"
+        value={fname}
+        onChange={handleFirstNameChange}
+      />
     </div>
+    <div>
+      <label htmlFor="lastName">Last Name:</label>
+      <input
+        type="text"
+        id="lastName"
+        value={lname}
+        onChange={handleLastNameChange}
+      />
+    </div>
+    <div>
+      <label htmlFor="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        value={user}
+        onChange={handleUsernameChange}
+      />
+    </div>
+    <div>
+      <label htmlFor="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        value={pwd}
+        onChange={handlePasswordChange}
+      />
+    </div>
+    <button type="submit">Register</button>
+  </form>
+</div>
+
   );
 }
 
