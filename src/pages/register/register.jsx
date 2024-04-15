@@ -27,6 +27,25 @@ function RegisterForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    // Validation for special characters in first name and last name
+    const nameRegex = /^[a-zA-Z]+$/;
+    if (!nameRegex.test(fname)) {
+      setError('First name can only contain letters.');
+      return;
+    }
+  
+    if (!nameRegex.test(lname)) {
+      setError('Last name can only contain letters.');
+      return;
+    }
+  
+    // Validation for special characters in username
+    const usernameRegex = /^[a-zA-Z0-9_]+$/;
+    if (!usernameRegex.test(user)) {
+      setError('Username can only contain letters, numbers, and underscores.');
+      return;
+    }
+
     try {
       const response = await axios.post('http://localhost:1337/register', { fname, lname, user, pwd });
       console.log(response.data);

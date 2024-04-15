@@ -1,13 +1,17 @@
 .loginPage {
 	display: flex;
-	flex-direction: column; /* Change the flex direction to column */
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100vh; /* Adjust the height as needed */
+	height: 100vh;
+  }
+  
+  .loginHeader {
+	margin-bottom: 20px; /* Add some space below the header */
   }
   
   .loginPage form {
-	width: 300px; /* Adjust the width as needed */
+	width: 300px;
   }
   
   .loginPage form div {
@@ -32,17 +36,10 @@
 	background-color: #ff1e00;
 	color: #fff;
 	border: none;
-	cursor: pointer;	
+	cursor: pointer;
   }
   
   .loginPage form button:hover {
 	background-color: #000000;
-  }
-  
-  .loginHeader {
-	margin-top: 50px;
-	text-align: center;
-	font-size: 40px;
-	color: aliceblue;
   }
   

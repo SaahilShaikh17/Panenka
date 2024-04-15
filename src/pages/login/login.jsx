@@ -27,6 +27,13 @@ export const LoginScreen = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+     // Validation for special characters in username
+     const usernameRegex = /^[a-zA-Z0-9_]+$/;
+     if (!usernameRegex.test(user)) {
+       setError('Username can only contain letters, numbers, and underscores.');
+       return;
+     }
+
     try {
       const response = await axios.post('http://localhost:1337/login', { user, pwd });
       console.log(response.data);
