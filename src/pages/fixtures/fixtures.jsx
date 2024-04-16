@@ -1,51 +1,73 @@
-//fixtures.jsx
-import React from 'react'
-import './fixtures.css'
-import { useEffect, useState , useMemo} from 'react'
+import React, { useEffect, useState, useMemo } from 'react';
+import './fixtures.css';
 import Axios from 'axios';
 
 export const Fixtures = () => {
   const [fixturesData, setFixturesData] = useState(null);
-  
-  const fetchdata = useMemo(() => async () => {
-    
+  const [selectedTeam, setSelectedTeam] = useState(null);
 
+  const fetchdata = useMemo(() => async () => {
     const apiUrl = 'https://v3.football.api-sports.io/fixtures?season=2023&league=39';
-  
+
     const axiosConfig = {
       headers: {
         'x-rapidapi-host': 'v3.football.api-sports.io',
-        'x-rapidapi-key': '5f36c45abe561f32839aeeae30b183e6', 
+        'x-rapidapi-key': 'c47b12e1a80f487a594dc2e2e561482f',
       },
     };
+
     // Fetch fixtures and update state
-    Axios.get(apiUrl,axiosConfig)
+    Axios.get(apiUrl, axiosConfig)
       .then((response) => {
-        console.log(JSON.stringify(response.data));
         setFixturesData(response.data);
       })
       .catch((error) => {
         console.error('Error fetching fixtures data:', error);
       });
-  
-},[]);
 
-useEffect(()=>{
-  fetchdata()
-},[fetchdata]);
-  
+  }, []);
+
+  useEffect(() => {
+    fetchdata();
+  }, [fetchdata]);
+
+  const filteredFixtures = selectedTeam
+    ? fixturesData?.response?.filter(
+        (fixture) =>
+          fixture.teams.home.name === selectedTeam || fixture.teams.away.name === selectedTeam
+      )
+    : fixturesData?.response;
+
   return (
-    <div className='fixturePage'>
-      <div className='fixtureTitle'>Fixtures</div>
+    <div className="fixturePage">
+      <div className="fixtureTitle">Fixtures</div>
+      <div className="teamFilter">
+        <span>Filter by Team:</span>
+        <select
+          value={selectedTeam}
+          onChange={(e) => setSelectedTeam(e.target.value === 'All' ? null : e.target.value)}
+        >
+          <option value="All">All Teams</option>
+          {fixturesData &&
+            fixturesData.response &&
+            [...new Set(fixturesData.response.map((fixture) => fixture.teams.home.name))].map(
+              (teamName) => (
+                <option key={teamName} value={teamName}>
+                  {teamName}
+                </option>
+              )
+            )}
+        </select>
+      </div>
       <div className="fixture-list">
-        {fixturesData && fixturesData.response ? (
+        {filteredFixtures ? (
           <div className="fixture-cards">
-            {fixturesData.response.map((fixture) => (
+            {filteredFixtures.map((fixture) => (
               <div className="fixture-card" key={fixture.fixture.id}>
                 <div className="fixture-date">{fixture.fixture.date}</div>
                 <div className="fixture-teams">
                   <div className="home-team">
-                    <img src={fixture.teams.home.logo} alt={fixture.teams.home.name} />
+                    <img src={fixture.teams.home.logo} alt={fixture.teams.home.name} className='logo'/>
                     <span>{fixture.teams.home.name}</span>
                   </div>
                   <div className="vs">vs</div>
@@ -73,4 +95,4 @@ useEffect(()=>{
       </div>
     </div>
   );
-}
+};

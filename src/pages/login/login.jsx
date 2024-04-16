@@ -3,12 +3,7 @@ import axios from 'axios';
 import './login.css'
 import {  Route, Routes } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
 
-import  Home from '../../components/Home';
-import  Login  from '../../components/Login';
-import  Register  from '../../components/Regsiter';
-import  Replies  from '../../components/Replier'
 
 
 export const LoginScreen = () => {

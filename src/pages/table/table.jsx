@@ -17,7 +17,7 @@ export const Table =()=> {
     const axiosConfig = {
       headers: {
         'x-rapidapi-host': 'v3.football.api-sports.io',
-        'x-rapidapi-key': '5f36c45abe561f32839aeeae30b183e6', 
+        'x-rapidapi-key': 'c47b12e1a80f487a594dc2e2e561482f', 
       },
     };
     // Fetch fixtures and update state
