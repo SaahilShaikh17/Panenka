@@ -8,10 +8,12 @@
   
   .loginHeader {
 	margin-bottom: 20px; /* Add some space below the header */
+	color: #E1E1E1;
   }
   
   .loginPage form {
 	width: 300px;
+	color: #E1E1E1;
   }
   
   .loginPage form div {
@@ -21,6 +23,7 @@
   .loginPage form label {
 	display: block;
 	margin-bottom: 5px;
+	color: #E1E1E1;
   }
   
   .loginPage form input {

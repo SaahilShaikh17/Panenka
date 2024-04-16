@@ -1,4 +1,3 @@
-/* fixtureHome.css */
 .fixturePage {
   padding: 20px;
   display: flex;
@@ -12,8 +11,13 @@
   margin-top: 50px;
   text-align: center;
   font-size: 40px;
+  font-weight: bold;
   background-color: black;
-  color: rgb(255, 255, 255);
+  color: white;
+}
+
+.fixtureList {
+  flex: 1;
 }
 
 .fixture-cards {
@@ -32,10 +36,10 @@
   width: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
+}
 
-  &:hover {
-    transform: translateY(-5px);
-  }
+.fixture-card:hover {
+  transform: translateY(-5px);
 }
 
 @media (max-width: 768px) {
