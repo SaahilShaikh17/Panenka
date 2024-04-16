@@ -13,6 +13,7 @@ import CreatePost from './pages/forum/CreatePost'; // Import as default
 
 import Footer from './components/footer';
 import RegisterForm from './pages/register/register';
+import SinglePostView from './pages/forum/SinglePostView';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path="/login" element={<LoginScreen />} />
               <Route path="/register" element={<RegisterForm />} />
               <Route path="/create-post" element={<CreatePost />} /> {/* Corrected path */}
+              <Route path="/posts/:postId" element={<SinglePostView/>} />
             </Routes>
           </Router>
       </div>
