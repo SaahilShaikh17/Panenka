@@ -10,7 +10,7 @@ import { About } from './pages/about/about';
 import { News } from './pages/news/news';
 import { LoginScreen } from './pages/login/login';
 import CreatePost from './pages/forum/CreatePost'; // Import as default
-
+import Profile from './pages/forum/profile';
 import Footer from './components/footer';
 import RegisterForm from './pages/register/register';
 import SinglePostView from './pages/forum/SinglePostView';
@@ -32,6 +32,7 @@ function App() {
               <Route path="/register" element={<RegisterForm />} />
               <Route path="/create-post" element={<CreatePost />} /> {/* Corrected path */}
               <Route path="/posts/:postId" element={<SinglePostView/>} />
+              <Route path="/profile" element={<Profile />} />
             </Routes>
           </Router>
       </div>

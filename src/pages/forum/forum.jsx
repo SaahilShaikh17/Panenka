@@ -10,9 +10,8 @@ export const Forum = () => {
   const [loading, setLoading] = useState(true);
 
   const handleLogout = () => {
-    localStorage.removeItem('accessToken'); // Remove the access token from local storage
-    // Redirect the user to the login page or any other desired page
-    window.location.href = '/login'; // Redirect to the login page
+    localStorage.removeItem('accessToken');
+    window.location.href = '/login';
   };
 
   useEffect(() => {
@@ -44,6 +43,9 @@ export const Forum = () => {
         <button>Create Post</button>
       </Link>
       <button onClick={handleLogout}>Logout</button>
+      <Link to="/profile">
+        <button>Update Profile</button> {/* Add this button */}
+      </Link>
       <div className="post-cards-container">
         {posts.map(post => (
           <PostCard key={post._id} post={post} />
