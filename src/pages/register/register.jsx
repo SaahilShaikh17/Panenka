@@ -47,7 +47,7 @@ function RegisterForm() {
     }
 
     try {
-      const response = await axios.post('http://localhost:1337/register', { fname, lname, user, pwd });
+      const response = await axios.post('https://paneka-backend.onrender.com/register', { firstname: fname, lastname: lname, username: user, password: pwd });
       console.log(response.data);
       // Handle successful registration, e.g., redirect to login page
     } catch (error) {
@@ -58,49 +58,48 @@ function RegisterForm() {
 
   return (
     <div className='loginPage'>
-  <h2 className='loginHeader'>Register</h2>
-  {error && <p>{error}</p>}
-  <form onSubmit={handleSubmit}>
-    <div>
-      <label htmlFor="firstName">First Name:</label>
-      <input
-        type="text"
-        id="firstName"
-        value={fname}
-        onChange={handleFirstNameChange}
-      />
+      <h2 className='loginHeader'>Register</h2>
+      {error && <p>{error}</p>}
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="firstName">First Name:</label>
+          <input
+            type="text"
+            id="firstName"
+            value={fname}
+            onChange={handleFirstNameChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="lastName">Last Name:</label>
+          <input
+            type="text"
+            id="lastName"
+            value={lname}
+            onChange={handleLastNameChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            value={user}
+            onChange={handleUsernameChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            value={pwd}
+            onChange={handlePasswordChange}
+          />
+        </div>
+        <button type="submit">Register</button>
+      </form>
     </div>
-    <div>
-      <label htmlFor="lastName">Last Name:</label>
-      <input
-        type="text"
-        id="lastName"
-        value={lname}
-        onChange={handleLastNameChange}
-      />
-    </div>
-    <div>
-      <label htmlFor="username">Username:</label>
-      <input
-        type="text"
-        id="username"
-        value={user}
-        onChange={handleUsernameChange}
-      />
-    </div>
-    <div>
-      <label htmlFor="password">Password:</label>
-      <input
-        type="password"
-        id="password"
-        value={pwd}
-        onChange={handlePasswordChange}
-      />
-    </div>
-    <button type="submit">Register</button>
-  </form>
-</div>
-
   );
 }
 

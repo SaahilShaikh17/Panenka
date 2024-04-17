@@ -3,8 +3,6 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './SinglePostView.css'; 
 
-const accessToken = localStorage.getItem('accessToken');
-
 const SinglePostView = () => {
   const { postId } = useParams(); 
   const [post, setPost] = useState(null);
@@ -14,8 +12,12 @@ const SinglePostView = () => {
   useEffect(() => {
     const fetchPostAndComments = async () => {
       try {
+        // Retrieve accessToken and userId from localStorage
+        const accessToken = localStorage.getItem('accessToken');
+        const userId = localStorage.getItem('userId');
+        
         // Fetch the post details
-        const postResponse = await axios.get(`http://localhost:1337/posts/${postId}`,{
+        const postResponse = await axios.get(`https://paneka-backend.onrender.com/posts/${postId}`, {
           headers: {
             Authorization: `Bearer ${accessToken}`
           }
@@ -23,7 +25,7 @@ const SinglePostView = () => {
         setPost(postResponse.data.post);
 
         // Fetch the comments for the post
-        const commentsResponse = await axios.get(`http://localhost:1337/comments/post/${postId}`, {
+        const commentsResponse = await axios.get(`https://paneka-backend.onrender.com/comments/post/${postId}`, {
           headers: {
             Authorization: `Bearer ${accessToken}`
           }
@@ -35,7 +37,7 @@ const SinglePostView = () => {
         // Clear the comment input field
         setNewComment('');
       } catch (error) {
-        console.error('Error adding comment:', error);
+        console.error('Error fetching post and comments:', error);
       }
     };
 
@@ -44,8 +46,11 @@ const SinglePostView = () => {
 
   const handleCommentSubmit = async () => {
     try {
+      // Retrieve accessToken from localStorage
+      const accessToken = localStorage.getItem('accessToken');
+
       // Send a request to add the new comment to the post
-      await axios.post(`http://localhost:1337/comments/post/${postId}`, {
+      await axios.post(`https://paneka-backend.onrender.com/comments/post/${postId}`, {
         commentText: newComment
       }, {
         headers: {
@@ -54,7 +59,7 @@ const SinglePostView = () => {
       });
 
       // Refetch the comments to update the UI
-      const commentsResponse = await axios.get(`http://localhost:1337/comments/post/${postId}`, {
+      const commentsResponse = await axios.get(`https://paneka-backend.onrender.com/comments/post/${postId}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`
         }
