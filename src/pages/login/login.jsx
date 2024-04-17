@@ -35,8 +35,7 @@ export const LoginScreen = () => {
       console.log(response.data);
       // Handle successful login, e.g., redirect to dashboard
       const { accessToken, userId } = response.data;
-      localStorage.setItem('accessToken', accessToken); // Store the access token in local storage
-      localStorage.setItem('userId', userId); // Store the user ID in local storage
+      localStorage.getItem('accessToken'); // Store the access token in local storage
       window.location.href = '/dashboard'; // Redirect to the dashboard after successful login
     } catch (error) {
       console.error('Login failed:', error.response.data.message);

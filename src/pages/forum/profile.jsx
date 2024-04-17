@@ -5,9 +5,7 @@ const Profile = ({ userId }) => { // Accept userId as a prop
     const [fname, setFirstName] = useState('');
     const [lname, setLastName] = useState('');
     const [user, setUsername] = useState('');
-    
     const handleUpdate = async () => {
-        await localStorage.getItem(userId);
       try {
         await axios.put('http://localhost:1337/users', {
           id: userId,
