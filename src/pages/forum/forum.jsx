@@ -1,9 +1,8 @@
-// Forum.jsx
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import PostCard from './PostCard'; // Import the PostCard component
-import './forum.css'; // Import your CSS file for styling
+import PostCard from './PostCard';
+import './forum.css';
 
 export const Forum = () => {
   const [posts, setPosts] = useState([]);
@@ -18,7 +17,7 @@ export const Forum = () => {
     const fetchPosts = async () => {
       try {
         const accessToken = localStorage.getItem('accessToken');
-        const response = await axios.get('http://localhost:1337/posts', {
+        const response = await axios.get('https://paneka-backend.onrender.com/posts', {
           headers: {
             Authorization: `Bearer ${accessToken}`
           }
@@ -44,7 +43,7 @@ export const Forum = () => {
       </Link>
       <button onClick={handleLogout}>Logout</button>
       <Link to="/profile">
-        <button>Update Profile</button> {/* Add this button */}
+        <button>Update Profile</button>
       </Link>
       <div className="post-cards-container">
         {posts.map(post => (
